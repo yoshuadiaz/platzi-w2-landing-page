@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #f2f6f9;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1040px;
+  width: 100%;
+}
+
+header {
+  background-image: url('https://www.yoshuadiaz.com/static/51ef9d1d24f4138d667900b5d7483c2b/2f7e7/yoshbackground.jpg');
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 1em 1em;
+}
+
+header h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  padding-bottom: 1em;
+}
+
+header .logo {
+  height: 250px;
+  width: 250px;
+  display: inline-block;
+  padding-bottom: 1em;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-menu li {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.header-menu li:hover {
+  opacity: 1;
+}
+
+.header-menu-izq, .header-menu-der {
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.header-menu-izq li, .header-menu-der li {
+  padding: .5em .5em;
+  display: inline-block;
+  font-size: .85em;
+}
+
+main .container {
+  display: grid;
+  grid-column: span 1;
+  grid-row-gap: 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #030303;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 3em 0;
+  margin-top: 2em;
+  text-align: center;
+}
+
+@media screen and (min-width: 720px) {
+  header {
+    padding: 5em 1em 8em;
+  }
+  main .container {
+    margin-top: -7em;
+    display: grid;
+    grid-gap: 1em;
+    padding: 0;
+    grid-template: 300px 1fr 380px /repeat(6, 1fr);
+    box-sizing: border-box;
+  }
+  .post-card:nth-last-child(2) {
+    grid-column: 1 / 4;
+  }
+  .post-card:last-child {
+    grid-column: 4 / 7;
+  }
+  .post-card:first-child {
+    grid-column: 1 / 7;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1em;
+    grid-column-gap: 1em;
+  }
+  .post-card:first-child figure {
+    height: 300px;
+    overflow: hidden;
+    grid-column: 1 / span 2;
+  }
+  .post-card:first-child figure img {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .post-card:first-child .post-card-content {
+    padding: 1em 0;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.post-card {
+  background-color: white;
+  border-radius: .5em;
+  grid-column: span 2 / span 1;
+  overflow: hidden;
+  box-shadow: 0 0 .75em rgba(0, 0, 0, .1);
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.post-card:hover {
+  transform: scale3d(1.02, 1.02, 1.02);
+  box-shadow: 0 0 1.75em rgba(0, 0, 0, .1);
+}
+
+.post-card figure {
+  height: 180px;
+  overflow: hidden;
+}
+
+.post-card p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: .95em;
+  line-height: 1.25em;
+  color: #333;
+}
+
+.post-card a {
+  float: right;
+  color: #333;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color .2s ease-in;
+  margin-top: 1em;
+  text-align: right;
+}
+
+.post-card:hover a {
+  color: rgb(238, 163, 1);
+}
+
+.post-card figure img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-card .post-card-content {
+  padding: 1em;
+  overflow: hidden;
+}
+
+.post-card .post-card-content h4 {
+  text-transform: uppercase;
+  color: #555;
+  font-weight: 300;
+  font-size: .75em;
+}
+
+.post-card .post-card-content h3 {
+  font-size: 1.5em;
+}
